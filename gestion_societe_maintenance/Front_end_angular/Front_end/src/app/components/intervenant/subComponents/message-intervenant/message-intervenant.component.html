@@ -1,0 +1,99 @@
+
+
+<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 left_col scroll-view " style="position:fixed; height:100%; ">
+
+
+  <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    
+        <h3 class="titre">Loncoto</h3>
+   <br>
+   <br>
+   <div class="navbar-brand js-scroll-trigger">Bonjour, {{Intervenantconnected.nom}}</div>
+    <div class="menu_section">
+      <h3>General</h3>
+      <ul class="nav side-menu">
+        <li>
+          <a routerLink='/intervenant'>
+            <i class="fa fa-home"></i> Tableau de bord
+            <span class="fa "></span>
+          </a>
+        </li>
+        <li>
+          <a routerLink='/intervenant/planning'>
+            <i class="fa fa-edit"></i> Planning
+            <span class="fa "></span>
+          </a>
+        </li>
+        <li>
+          <a routerLink='/intervenant/interventions'>
+            <i class="fa fa-table"></i> Interventions
+            <span class="fa "></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="menu_section">
+      <h3>Live On</h3>
+      <ul class="nav side-menu">
+        <li>
+          <a routerLink='/intervenant/message' pageScroll href="#messagerie">
+            <i class="fa fa-bug"></i> Messagerie
+            <span class="fa "></span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-windows"></i> Extras
+            <span class="fa "></span>
+          </a>
+        </li>
+
+
+      </ul>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+  </div>
+
+
+</div>
+<!-- /sidebar menu -->
+
+<header class="masthead text-center  d-flex " id="interlist">
+  
+  <div class="container-fluid my-auto" style=" height:100%; ">
+      <div class="row">
+  
+          <div  class="col-lg-8 col-sm-10 col-xs-10 col-md-10 placeenhaut">
+
+<div class="container">
+<div class="col-md-12">
+<div class="form-area"> 
+<form role="form">
+<br style="clear:both">
+<div class="form-group">
+<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" [(ngModel)]="subject" required>
+</div>
+<div class="form-group">
+<textarea class="form-control" type="textarea" id="message" name="message" placeholder="Message" [(ngModel)]="message" maxlength="140" rows="7"></textarea>              
+</div>
+<button type="button" id="submit" name="submit" class="btn btn-primary pull-right" (click)="save(name, email, mobile, subject, message)">Envoyer</button>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</header>
+

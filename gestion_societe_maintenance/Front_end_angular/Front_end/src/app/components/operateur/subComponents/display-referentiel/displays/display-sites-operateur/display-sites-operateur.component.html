@@ -1,0 +1,28 @@
+<table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>nom</th>
+        <th>Client</th>
+        <button class="btn btn-warning" (click)="details(0)"pageScroll href="#site" >Créer</button>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let site of sitesSubject |async">
+        <td>{{site.nom}}</td>
+        <td>{{site.id_Client}}</td>
+        <td>
+          <a type="button" (click)="details(site.id)" class=" btn-primary btn-xs" pageScroll href="#site"> 
+            <i class="fa fa-user"> </i> Détails 
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+      <div class="col-lg-7"></div>
+      <div class="col-lg-5">
+    <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px"[totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
+      (pageChanged)="pageChanged($event)"></pagination> 
+      </div>
+  </div>
+  

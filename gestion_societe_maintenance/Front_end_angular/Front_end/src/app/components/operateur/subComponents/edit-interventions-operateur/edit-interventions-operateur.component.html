@@ -1,0 +1,45 @@
+<div class=" well">
+
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      Editer les interventions
+    </div>
+    <div class="panel-body">
+
+
+      <form>
+        <input type="hidden" name="id" id="id" [(ngModel)]="currentIntervention.id" />
+        <div class="form-group">
+          <label>Date Prévu</label>
+          <input type="datetime" class="form-control" name="datep" id="datep" [(ngModel)]="currentIntervention.datePrevu" />
+        </div>
+        <div class="form-group">
+          <label>Date Effectuée</label>
+          <input type="datetime" class="form-control" name="dateeff" id="dateeff" [(ngModel)]="currentIntervention.dateEffectue" />
+        </div>
+
+        <div class="form-group">
+          <label>Commentaire</label>
+          <input type="text" class="form-control" name="commentaire" id="commentaire" [(ngModel)]="currentIntervention.commentaire"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Materiel</label>
+          <input type="number" class="form-control" name="matos" id="matos" [(ngModel)]="currentIntervention.id_Materiel" />
+        </div>
+
+        <div class="form-group">
+          <label>Intervenant</label>
+          <input type=" number" class="form-control" name="intervenant" id="intervenant" [(ngModel)]="currentIntervention.id_Intervenant"
+          />
+        </div>
+
+        <button class="btn btn-warning" (click)="cancelIntervention()">annuler</button>
+        <button class="btn btn-sucess" (click)="saveIntervention()"  pageScroll routerLink='/operateur' href="#interlist">save</button>
+      </form>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class=" well">
+
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        Modifier un intervention
+      </div>
+      <div class="panel-body">
+  
+  
+          <form>
+              <input type="hidden" name="id" id="id" [(ngModel)]="currentIntervention.id" />
+
+              <div class="form-group">
+                <label>Materiel</label> <br>
+                <select name="materiel" [(ngModel)]="currentIntervention.materiel">
+                  <option  *ngFor="let materiel of materielsSubject |async" [ngValue]="materiel" >Site :{{materiel.lesite.nom}} - {{materiel.article.marque}} -- {{materiel.article.nom}} {{materiel.article.serialID}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Date Prevu</label>
+                <input type="date" class="form-control" name="date" id="date" [(ngModel)]="currentIntervention.datePrevu" [(ngModel)]="currentIntervention.start"
+                  [(ngModel)]="currentIntervention.end" />
+              </div>
+              <div class="form-group">
+                  <label>Date Effectue</label>
+                  <input type="date" class="form-control" name="date" id="date" [(ngModel)]="currentIntervention.dateEffectue" [(ngModel)]="currentIntervention.start"
+                    [(ngModel)]="currentIntervention.end" />
+                </div>
+              <div class="form-group">
+                <label>Commentaire</label>
+                <input type="text" class="form-control" name="title" id="title" [(ngModel)]="currentIntervention.title" />
+              </div>
+              <div class="form-group">
+                  <label>Status</label> <br><select>
+                  <option value="volvo">Terminé</option>
+                  <option value="saab">En cours</option>
+                  <option value="mercedes">À traiter</option></select>
+                </div>
+
+
+              <button class="btn btn-warning" (click)="cancelIntervention()">annuler</button>
+              <button class="btn btn-sucess" (click)="saveIntervention()" pageScroll href="#tableaux">créer</button>
+            </form>
+
+  
+  
+      </div>
+    </div>
+  </div>

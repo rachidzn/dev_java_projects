@@ -1,0 +1,316 @@
+
+
+  
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" pageScroll routerLink='/home' href="#page-top">Loncoto</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger"  pageScroll routerLink='/home' href="#about">Qui Nous sommes ?</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" pageScroll routerLink='/home' href="#services">Nos Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" pageScroll routerLink='/home' href="#portfolio">Découvrir</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" pageScroll routerLink='/home' href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<header class="masthead text-center text-white d-flex" id="page-top">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="text-uppercase">
+          <strong>bienvenue, Loncoto Boy</strong>
+        </h1>
+        <hr>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <p class="text-faded mb-5">Je suis </p>
+        <a class="btn btn-primary4 btn-xl js-scroll-trigger" (click)="ngxSmartModalService.getModal('connexionclient').open()" >Un Client</a>
+   <a class="btn btn-primary2 btn-xl js-scroll-trigger" (click)="ngxSmartModalService.getModal('connexionoperateur').open()">Un Opérateur</a>
+    <a class="btn btn-primary3 btn-xl js-scroll-trigger" style="color:black" (click)="ngxSmartModalService.getModal('connexionintervenant').open()" >Un intervenant</a>
+    
+    <ngx-smart-modal style="color:black;text-align: left" #connexionclient identifier="connexionclient">
+        <h2>Se Connecter
+            <small>Client: <select name="client" [(ngModel)]="currentclient">
+                <option *ngFor="let client of clientsSubject |async"  [ngValue]="client">{{client.nom}}
+                  </option>
+              </select> </small>
+          </h2>
+          <table>
+              <tr>
+                <td>Identifiant : </td><td><input type="text" value="xxxxxx@xxxxx.fr"></td>
+              </tr>
+              <tr>
+                  <td>Mot de Passe :</td><td><input  type="password" value="xxxxxxxx"></td>
+                </tr>
+  
+
+          </table>
+     
+      <button routerLink='/client' style="text-align: center" (click)="connexionclient.close()"  (click)="connectclient(currentclient.id)" class="btn btn-primary4">Connexion</button>
+      
+    </ngx-smart-modal>
+
+
+
+
+
+    <ngx-smart-modal style="color:black;text-align: left" #connexionintervenant identifier="connexionintervenant">
+        <h2>Se Connecter
+            <small>Intervenant:  
+              <select name="intervenant" [(ngModel)]="currentintervenant">
+                <option *ngFor="let intervenant of intervenantsSubject |async"  [ngValue]="intervenant">{{intervenant.prenom}} {{intervenant.nom}}
+                  </option>
+              </select></small>
+          </h2>
+          <table>
+              <tr>
+                <td>Identifiant : </td><td><input type="text" value="xxxxxx@loncoto.fr"></td>
+              </tr>
+              <tr>
+                  <td>Mot de Passe :</td><td><input type="password" value="xxxxxxxx"></td>
+                </tr>
+  
+
+          </table>
+     
+      <button routerLink='/intervenant' (click)="connexionintervenant.close()" (click)="connectintervenant(currentintervenant.id)"style="text-align: center" class="btn btn-primary3">Connexion</button>
+      
+    </ngx-smart-modal>
+
+
+    <ngx-smart-modal style="color:black;text-align: left" #connexionoperateur identifier="connexionoperateur">
+      <h2>Se Connecter
+          <small>Operateur: <select name="operateur" [(ngModel)]="ouioui" >
+            
+            <option value="1">Boss
+              </option>
+              <option value="2">Big Boss 
+              </option>
+              <option value="3">Steve Chikh 
+              </option>
+          </select> 
+            </small>
+        </h2>
+        <table>
+            <tr>
+              <td>Identifiant : </td><td><input type="text" value="boss@loncoto.fr"></td>
+            </tr>
+            <tr>
+                <td>Mot de Passe :</td><td><input type="password" value="xxxxxxxx"></td>
+              </tr>
+
+
+        </table>
+   
+    <button routerLink='/operateur' (click)="connexionoperateur.close()" style="text-align: center" class="btn btn-primary3">Connexion</button>
+    
+  </ngx-smart-modal>
+
+
+
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+<section class="fond1" id="about" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-heading text-white"><I>Nous sommes fournisseurs de solution!</I></h2>
+        <hr class="light my-4">
+        <p class="text-faded mb-4">Loncoto est présent sur l'ensemble du territoire français pour apporter une solution de maintenance active de matériels informatiques.</p>
+        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Découvrir</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Notre Gamme de Services</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-refresh text-info2 mb-3 sr-icons"></i>
+              <h3 class="mb-3">Intervention Préventive</h3>
+              <p class="text-muted mb-0">Assurer la longévité des appareils est une priorité pour Loncoto.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-medkit text-info2 mb-3 sr-icons"></i>
+              <h3 class="mb-3">Intervention Curative</h3>
+              <p class="text-muted mb-0">Nous savons intervenir efficacement si le besoin se présente.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-file-pdf-o text-info2 mb-3 sr-icons"></i>
+              <h3 class="mb-3">Fiches de Suivi Continue</h3>
+              <p class="text-muted mb-0">Nous fournissons des rapports détaillées à chacune de nos actions.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-child text-info2 mb-3 sr-icons"></i>
+              <h3 class="mb-3">Proximité avec le Client</h3>
+              <p class="text-muted mb-0">Loncoto reste disponible en permanence à l'écoute de vos besoins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-0" id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box">
+              <img class="img-fluid" src="assets/portfolio/thumbnails/1.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded2">
+                    Toulouse
+                  </div>
+                  <div class="project-name text-faded2">
+                    Intervention#1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box">
+              <img class="img-fluid" src="assets/portfolio/thumbnails/2.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded2">
+                    Boulogne-Billancourt
+                  </div>
+                  <div class="project-name text-faded2">
+                    Intervention#2
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box">
+              <img class="img-fluid" src="assets/portfolio/thumbnails/3.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded2">
+                    Strasbourg
+                  </div>
+                  <div class="project-name text-faded2">
+                    Intervention#3
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box">
+              <img class="img-fluid" src="assets/portfolio/thumbnails/4.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded2">
+                    Carcassone
+                  </div>
+                  <div class="project-name text-faded2">
+                    Intervention#4
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box">
+              <img class="img-fluid" src="assets/portfolio/thumbnails/5.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded2">
+                    Nice
+                  </div>
+                  <div class="project-name text-faded2">
+                    Intervention#5
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="portfolio-box">
+              <img class="img-fluid" src="assets/portfolio/thumbnails/6.jpeg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded2">
+                    Boulogne-Billancourt
+                  </div>
+                  <div class="project-name text-faded2">
+                    Intervention#6
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">Pas encore Client ? N'hésitez plus!</h2>
+        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Faire un devis</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Restons en Contact !</h2>
+            <hr class="my-4">
+            <p class="mb-5">Êtes-vous prêt à démarrer une nouvelle aventure avec Loncoto? Appelez nous ou envoyez nous un e-mail et nous vous répondrons le plus vite possible!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com" style="color:rgb(49, 37, 221);">contact@lonconto.fr</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>

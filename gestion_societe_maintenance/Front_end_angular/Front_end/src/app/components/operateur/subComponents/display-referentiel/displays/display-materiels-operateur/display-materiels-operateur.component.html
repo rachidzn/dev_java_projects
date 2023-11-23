@@ -1,0 +1,30 @@
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>Modèle</th>
+      <th>Numéro de série</th>
+      <th>Site</th>
+      <button class="btn btn-warning" (click)="details(0)"pageScroll href="#materiel" >Créer</button>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let materiel of materielsSubject |async">
+      <td>{{materiel.article.nom}}</td>
+      <td>{{materiel.serialID}}</td>
+      
+      <td >{{materiel.lesite.nom}}</td>
+      <td>
+        <a type="button" (click)="details(materiel.id)" class=" btn-primary btn-xs" pageScroll href="#materiel"> 
+          <i class="fa fa-user"> </i> Détails 
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="row">
+    <div class="col-lg-7"></div>
+    <div class="col-lg-5" style="overflow: auto">
+  <pagination [totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
+    (pageChanged)="pageChanged($event)"></pagination> 
+    </div>
+</div>

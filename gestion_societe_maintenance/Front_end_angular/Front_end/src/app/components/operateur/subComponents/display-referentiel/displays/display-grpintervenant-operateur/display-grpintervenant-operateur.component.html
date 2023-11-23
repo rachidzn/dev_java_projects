@@ -1,0 +1,83 @@
+
+      
+            <div class="col-lg-6"  >
+                <div class="x_content">
+                    <p class="text-muted font-13 m-b-30">
+                      DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction
+                      function:
+                      <code>$().DataTable();</code> 
+                    </p>
+                    <div class="x_panel" style="color:black">
+                    <table class="table table-striped " >
+                        <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Nom</th>
+                            
+                           
+                            
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let Groupe of GroupesSubject |async">
+                            <td>{{Groupe.id}}</td>
+                            <td>{{Groupe.nom}}</td>
+                            
+                            <td>
+                              <a type="button" (click)="details(Groupe.id)" class=" btn-primary btn-xs" > 
+                                <i class="fa fa-user"> </i> Détails 
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      </div>
+
+
+                      
+                      <div class="row" >
+                        <div class="col-lg-7"></div>
+                        <div class="col-lg-5">
+                        <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px"[totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
+                          (pageChanged)="pageChanged($event)"></pagination> 
+                          </div>
+                      </div>
+                    
+                  </div>
+              </div>
+              
+              <div class="col-lg-6">
+                <div class="col-lg-8 mx-auto text-center">
+              
+                  <div class=" well">
+              
+                    <div class="panel panel-danger">
+                      <div class="panel-heading">
+                        Modifier/Créer un Nouveau Groupe ? 
+                      </div>
+                      <div class="panel-body">
+              
+              
+                        <form>
+                          <input type="hidden" name="id" id="id" [(ngModel)]="currentGroupe.id" />
+                          <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" class="form-control" name="nom" id="nom" [(ngModel)]="currentGroupe.nom" />
+                          </div>
+                         
+              
+                        
+              
+                          <button class="btn btn-warning" (click)="cancelGroupe()">annuler</button>
+                          <button class="btn btn-sucess" (click)="saveGroupe()" >save/créer</button>
+                        </form>
+              
+              
+                      </div>
+                    </div>
+                  </div>
+              
+              
+                </div>
+              </div>

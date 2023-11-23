@@ -1,0 +1,108 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
+  <div class="container">
+
+    
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" ><Table>Accueil</Table></a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" >Mon Compte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" routerLink='/home'><i class="fa fa-power-off"></i> Deconnexion</a>
+          </li>
+  
+
+
+       
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-brand js-scroll-trigger">Bonjour, {{Intervenantconnected.prenom}} {{Intervenantconnected.nom}}</div>
+</nav>
+
+
+<header class="masthead text-center  d-flex " id="interlist">
+    
+<div class="container-fluid my-auto" style=" height:97%; ">
+    <div class="row">
+<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 left_col scroll-view " style="position:fixed; height:100%; ">
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+      
+      <div class="site_title"><i class="fa fa-paw"></i> <span>Loncoto</span>
+      </div>
+         
+  
+      <div class="menu_section">
+        <h3>General</h3>
+        <ul class="nav side-menu">
+          <li>
+            <a routerLink='/intervenant'>
+              <i class="fa fa-home"></i> Tableau de bord
+              <span class="fa "></span>
+            </a>
+          </li>
+          <li>
+            <a routerLink='/intervenant/planning'>
+              <i class="fa fa-edit"></i> Mon Planning
+              <span class="fa "></span>
+            </a>
+          </li>
+          <li>
+            <a routerLink='/intervenant/interventions'>
+              <i class="fa fa-table"></i>Mes Interventions
+              <span class="fa "></span>
+            </a>
+          </li>
+         
+         
+        </ul>
+      </div>
+  
+      <div class="menu_section">
+        <h3>Live On</h3>
+        <ul class="nav side-menu">
+         
+          <li>
+            <a>
+              <i class="fa fa-windows"></i> Extras
+              <span class="fa "></span>
+            </a>
+          </li>
+         
+        </ul>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+ 
+  <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
+  
+    <div class="x_panel" >
+      <div *ngIf="calendarOptions" >
+        <ng-fullcalendar  #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
+            (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)"></ng-fullcalendar>
+    </div>
+    </div>
+
+
+  </div>
+</div>
+ </div>
+    </header>
+

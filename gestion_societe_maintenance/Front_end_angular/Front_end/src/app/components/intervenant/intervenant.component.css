@@ -1,0 +1,23 @@
+
+    
+   
+    .titre {
+        font-family: 'Dosis', sans-serif;
+    }
+    .left_col {
+        background: rgb(94, 114, 104);
+        opacity: 0.97;
+        }
+        .x_panel {
+            background: rgb(161, 182, 172);
+            opacity: 0.90;
+        }
+        
+      
+        .bg-primary {
+            background-color: #55457a !important;
+        }
+        .main_menu_side{
+            height: 100%;
+           
+        }

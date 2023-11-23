@@ -1,0 +1,20 @@
+.left_col {
+    background: #55457a;
+    }
+    
+    .x_panel{
+        background: #98a4ca;;
+    }
+    #modalClient {
+        background-color: transparent;
+    }
+    .titre {
+        font-family: 'Dosis', sans-serif;
+    }
+    .bg-primary {
+        background-color: #55457a !important;
+    }
+    .main_menu_side{
+        height: 100%;
+       
+    }

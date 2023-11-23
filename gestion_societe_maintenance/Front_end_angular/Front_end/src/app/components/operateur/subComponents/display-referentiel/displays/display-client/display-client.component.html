@@ -1,0 +1,29 @@
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>nom</th>
+      <th>email</th>
+      <button class="btn btn-warning" (click)="details(0)"pageScroll href="#client" >Créer</button>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clientsSubject |async">
+      <td>{{client.id}}</td>
+      <td>{{client.nom}}</td>
+      <td>{{client.email}}</td>
+      <td>
+        <a type="button" (click)="details(client.id)" class=" btn-primary btn-xs" pageScroll href="#client"> 
+          <i class="fa fa-user"> </i> Détails 
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="row" >
+  <div class="col-lg-7"></div>
+  <div class="col-lg-5">
+  <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px"[totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
+    (pageChanged)="pageChanged($event)"></pagination> 
+    </div>
+</div>

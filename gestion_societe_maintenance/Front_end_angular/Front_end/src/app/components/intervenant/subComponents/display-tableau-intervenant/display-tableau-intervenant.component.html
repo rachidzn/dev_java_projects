@@ -1,0 +1,190 @@
+
+  <div class="col-lg-8 ">
+
+   
+              <div class="row">
+                <div class="x_panel" >
+                  <div class="x_title" >
+                    <h2>Ecrire un rapport <small>d'intervention</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="container">
+                      <div class="col-md-12">
+                      <div class="form-area"> 
+                      <form role="form">
+                      <br style="clear:both">
+                      <div class="form-group">
+                      <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" [(ngModel)]="subject" required>
+                      </div>
+                      <div class="form-group">
+                      <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Message" [(ngModel)]="message" maxlength="140" rows="7"></textarea>              
+                      </div>
+                      <button type="button" id="submit" name="submit" class="btn btn-primary pull-right" (click)="save(name, email, mobile, subject, message)">Envoyer</button>
+                      </form>
+                      </div>
+                      </div>
+                      
+                      </div>
+                    
+                  </div>
+               
+              </div>
+              </div>
+
+              <div class="row">
+                <div class="x_panel" >
+                    <div class="x_title" >
+                      <h2>Mes statistiques<small>du 01/01/2017 aux 01/01/2018</small></h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+          
+                      <div class="row" style="border-bottom: 1px solid #E0E0E0; padding-bottom: 5px; margin-bottom: 5px;">
+                          <div >
+                         
+                              <canvas style="height:200px; width:900px;" baseChart
+                                      [datasets]="barChartData"
+                                      [labels]="barChartLabels"
+                                      [options]="barChartOptions"
+                                      [legend]="barChartLegend"
+                                      [chartType]="barChartType"
+                                      (chartHover)="chartHovered($event)"
+                                      (chartClick)="chartClicked($event)"></canvas>
+                          
+                            <button (click)="randomize()">Plus de détails</button>
+                          </div>
+                      </div>
+                    </div>
+                 </div>
+                </div>
+      </div>
+
+      <div class="col-lg-4 ">
+       
+         <div class="x_panel">
+          <div class="x_title">
+            <h2>Prochaines interventions</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <article class="media event">
+              <a class="pull-left date">
+                <p class="month">April</p>
+                <p class="day">23</p>
+              </a>
+              <div class="media-body">
+                <a class="title" href="#">Item One Title</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </article>
+            <article class="media event">
+              <a class="pull-left date">
+                <p class="month">April</p>
+                <p class="day">23</p>
+              </a>
+              <div class="media-body">
+                <a class="title" href="#">Item Two Title</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </article>
+            <article class="media event">
+              <a class="pull-left date">
+                <p class="month">April</p>
+                <p class="day">23</p>
+              </a>
+              <div class="media-body">
+                <a class="title" href="#">Item Two Title</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </article>
+            <article class="media event">
+              <a class="pull-left date">
+                <p class="month">April</p>
+                <p class="day">23</p>
+              </a>
+              <div class="media-body">
+                <a class="title" href="#">Item Two Title</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </article>
+            <article class="media event">
+                <a class="pull-left date">
+                  <p class="month">April</p>
+                  <p class="day">23</p>
+                </a>
+                <div class="media-body">
+                  <a class="title" href="#">Item Two Title</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </article>
+              <article class="media event">
+                <a class="pull-left date">
+                  <p class="month">April</p>
+                  <p class="day">23</p>
+                </a>
+                <div class="media-body">
+                  <a class="title" href="#">Item Two Title</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </article>
+              <article class="media event">
+                <a class="pull-left date">
+                  <p class="month">April</p>
+                  <p class="day">23</p>
+                </a>
+                <div class="media-body">
+                  <a class="title" href="#">Item Two Title</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </article>
+          </div>
+        </div>
+      </div>
+   
+ 

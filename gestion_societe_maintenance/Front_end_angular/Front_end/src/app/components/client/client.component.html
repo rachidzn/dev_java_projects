@@ -1,0 +1,224 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
+  <div class="container">
+
+    
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <!--  <button type="button" id="modalClient" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Contact</button>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="false">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Recipient:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Message:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+              </div>
+            </div>
+          </div>-->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" ><Table>Accueil</Table></a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" >Mon Compte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" routerLink='/home'><i class="fa fa-power-off"></i> Deconnexion</a>
+          </li>
+  
+
+
+       
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-brand js-scroll-trigger">Bonjour, {{Clientconnected.nom}}</div>
+</nav>
+
+<header class="masthead text-center text-white d-flex " id="interlist">
+  <div class="container-fluid my-auto" style="position:fixed; height:97%; ">
+    <div class="row">
+      <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 left_col scroll-view " style="position:fixed; height:100%; ">
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div class="site_title"><i class="fa fa-paw"></i> <span>Loncoto</span>
+          </div>
+        
+          <br>
+
+          <div class="menu_section">
+            <h3>General</h3>
+            <ul class="nav side-menu">
+              <li>
+                <a routerLink='/client'>
+                  <i class="fa fa-home"></i> Accueil
+                  <span class="fa "></span>
+                </a>
+              </li>
+              <li>
+                <a routerLink='/client/interventions'>
+                  <i class="fa fa-edit"></i> Nos Interventions
+                  <span class="fa "></span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="menu_section">
+            <h3>Live On</h3>
+            <ul class="nav side-menu">
+              <li>
+                <a routerLink='/client/message'>
+                  <i class="fa fa-bug"></i> Echanger avec Loncoto
+                  <span class="fa "></span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <i class="fa fa-windows"></i> Extras
+                  <span class="fa "></span>
+                </a>
+              </li>
+             
+      
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
+        <div class="page-title">
+          <div class="title_left">
+            <h3 class="text-white"> Bienvenue sur votre Espace Personnel
+              <small> ! </small>
+            </h3>
+          </div>
+
+          <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+        <app-display-tableau-client></app-display-tableau-client>
+      </div>
+     
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="x_panel" style="height: 700px;">
+          <div class="x_title">
+            <h2>Activités <small>Prochaines Interventions </small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <ul class="list-unstyled timeline">
+              <li>
+                <div class="block">
+                  <div class="tags">
+                    <a href="" class="tag">
+                      <span>25/09/2018</span>
+                    </a>
+                  </div>
+                  <div class="block_content">
+                    <h2 class="title">
+                                    <a>Interventions sur Xmark 45523FDS</a>
+                                </h2>
+                    <div class="byline">
+                      <span>13 hours ago</span> by <a>Intervenant</a>
+                    </div>
+                    <p class="excerpt">Lorem, ipsum dolo necessitatibus enim sed animi hic itaque sit! <a>Read&nbsp;More</a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="block">
+                  <div class="tags">
+                    <a href="" class="tag">
+                      <span>02/10/2018</span>
+                    </a>
+                  </div>
+                  <div class="block_content">
+                    <h2 class="title">
+                                    <a>Interventions sur Appeul OPJKW3FDS</a>
+                                </h2>
+                    <div class="byline">
+                      <span>13 hours ago</span> by <a>Intervenant</a>
+                    </div>
+                    <p class="excerpt">Lorem, ipsum dolo necessitatibus enim sed animi hic itaque sit!  <a>Read&nbsp;More</a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="block">
+                  <div class="tags">
+                    <a href="" class="tag">
+                      <span>10/10/2018</span>
+                    </a>
+                  </div>
+                  <div class="block_content">
+                    <h2 class="title">
+                                    <a>Intervention sur Amazen 54dse436</a>
+                                </h2>
+                    <div class="byline">
+                      <span>13 hours ago</span> by <a>Intervenant</a>
+                    </div>
+                    <p class="excerpt">Lorem, ipsum dolo necessitatibus enim sed animi hic itaque sit! <a>Read&nbsp;More</a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+  </div>
+</header>

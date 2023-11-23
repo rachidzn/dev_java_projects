@@ -1,0 +1,226 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
+  <div class="container">
+
+    
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" ><Table>Accueil</Table></a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" >Mon Compte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" routerLink='/home'><i class="fa fa-power-off"></i> Deconnexion</a>
+          </li>
+  
+
+
+       
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-brand js-scroll-trigger">Bonjour, {{Clientconnected.nom}}</div>
+</nav>
+
+<header class="masthead text-center text-white d-flex " id="interlist">
+  <div class="container-fluid my-auto" style="position:fixed; height:97%; ">
+    <div class="row">
+      <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 left_col scroll-view " style="position:fixed; height:100%; ">
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div class="site_title"><i class="fa fa-paw"></i> <span>Loncoto</span>
+          </div>
+        
+          <br>
+
+          <div class="menu_section">
+            <h3>General</h3>
+            <ul class="nav side-menu">
+              <li>
+                <a routerLink='/client'>
+                  <i class="fa fa-home"></i> Accueil
+                  <span class="fa "></span>
+                </a>
+              </li>
+              <li>
+                <a routerLink='/client/interventions'>
+                  <i class="fa fa-edit"></i> Nos Interventions
+                  <span class="fa "></span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="menu_section">
+            <h3>Live On</h3>
+            <ul class="nav side-menu">
+              <li>
+                <a routerLink='/client/message'>
+                  <i class="fa fa-bug"></i> Echanger avec Loncoto
+                  <span class="fa "></span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <i class="fa fa-windows"></i> Extras
+                  <span class="fa "></span>
+                </a>
+              </li>
+             
+      
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
+        <div class="page-title">
+          <div class="title_left">
+            <h3 class="text-white"> Consulter le détails de nos interventions.
+              <small>  </small>
+            </h3>
+          </div>
+
+          <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         
+            <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 ">
+              
+                <div class="x_panel" style="height: 700px;overflow: auto">
+                  <div class="x_title">
+                    <h2> Interventions sur matériels de {{Clientconnected.nom}} </h2>
+                  </div>
+                  <div class="x_content">
+
+                    <table class="table" style="overflow: auto">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>DatePrevu</th>
+                          <th>DateEffectue</th>
+                          <th>Statut</th>
+                          <th>Commentaire</th>
+                          <th>Matériel</th>
+                          <th>Intervenant</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let intervention of interventionsSubject | async">
+                          <td>{{intervention.id}}</td>
+                          <td>{{intervention.start}}</td>
+                          <td>{{intervention.end}}</td>
+                          <td>{{intervention.statut}}</td>
+                          <td>{{intervention.commentaire}}</td>
+                          <td>{{intervention.materiel.article.marque}}</td>
+                          <td>{{intervention.intervenant.nom}}</td>
+                          <td><button (click)="genererpdf(intervention.id)" (click)="ngxSmartModalService.getModal('pdfclient').open()" class="btn btn-warning btn-xs">
+                            Exporter le PDF
+                          </button></td>
+                          
+                          <ngx-smart-modal style="color:black;text-align: left" #pdfclient identifier="pdfclient">
+                            
+                              <kendo-pdf-export #pdfoperateur paperSize="A4" margin="2cm">
+                                <div class="text-right">
+                                  <div class="site_title">
+                                    <i class="fa fa-paw" style="color: blue"></i>
+                                    <span style="color: blue">Loncoto</span>
+                                  </div>
+                      
+                                </div>
+                                <h3>
+                                  <I>
+                                    <strong>Fiche-Intervention n° {{intervention.id}}</strong>
+                                  </I>
+                                </h3>
+                      
+                      
+                                <table class="table ">
+                                  <tbody>
+                                    <tr>
+                                      <td>Date : </td>
+                                      <td>{{intervention.start}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Statut : </td>
+                                      <td>{{intervention.statut}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Intervenant : </td>
+                                      <td>{{intervention.intervenant.prenom}} {{intervention.intervenant.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Site : </td>
+                                      <td>{{intervention.materiel.lesite.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Client : </td>
+                                      <td>{{intervention.materiel.client.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Materiel - serial : </td>
+                                      <td>{{intervention.materiel.serialID}} </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Materiel - modèle: </td>
+                                      <td>{{intervention.materiel.article.marque}} - {{intervention.materiel.article.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Commentaire:</td>
+                                      <td>{{intervention.commentaire}}</td>
+                                    </tr>
+                      
+                                  </tbody>
+                      
+                      
+                                </table>
+                                <p style="font-size: 75% ;">Export fait le {{curDate | date:'yyyy-MM-dd'}} par {{intervention.materiel.client.nom}}
+                      
+                                </p>
+                              </kendo-pdf-export>
+                              <button style="text-align: center" (click)="pdfclient.close()" kendo-button (click)="pdfoperateur.saveAs('ExportedIntervention.pdf')" class="btn btn-primary4">telecharger</button>
+
+                           
+                         
+                         
+                          
+                        </ngx-smart-modal>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+               
+                  
+     
+
+
+                  
+                    <div class="clearfix">
+                    <div class="col-lg-8 mx-auto text-center">
+                      <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px" [totalItems]="totalItems" [ngModel]="currentPage"
+                        [itemsPerPage]="taillePage" (pageChanged)="pageChanged($event)"></pagination>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             
+        </div>
+      </div>
+    </div>
+
+</header>
+
+ 
