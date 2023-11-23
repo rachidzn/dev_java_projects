@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:insert="layout/default.html :: headerfiles"></th:block>
+</head>
+<body>
+<nav th:insert="layout/default.html :: navbar"></nav>
+<div class="container" >
+<br><br><br><br>
+<table style="width:100%">
+<tr>
+<td align="center">
+            <map name="estoremap">
+                <area alt="Birds" coords="72,2,280,250" shape="RECT" th:href="@{/findProducts?categoryId=BIRDS}"/>
+                <area alt="Fish" coords="2,180,72,250" shape="RECT" th:href="@{/findProducts?categoryId=FISH}"/>
+                <area alt="Dogs" coords="60,250,130,320" shape="RECT" th:href="@{/findProducts?categoryId=DOGS}"/>
+                <area alt="Reptiles" coords="140,270,210,340" shape="RECT" th:href="@{/findProducts?categoryId=REPTILES}"/>
+                <area alt="Cats" coords="225,240,295,310" shape="RECT" th:href="@{/findProducts?categoryId=CATS}"/>
+                <area alt="Birds" coords="280,180,350,250"  shape="RECT" th:href="@{/findProducts?categoryId=BIRDS}"/>
+            </map>
+            <img th:src="@{/img/splash.gif}" height="355" usemap="#estoremap" width="350" />
+            </td>
+            </tr>
+</table>
+<br>
+<h5 align="center" th:if="${customerCreated}!=null" th:text="#{new.account.creation.success}"></h5>
+<div th:insert="layout/default.html :: footer"></div>
+</div>
+<nav th:insert="layout/default.html :: footernavbar"></nav>
+<div th:insert="layout/default.html :: scripts"></div>
+</body>
+</html>
